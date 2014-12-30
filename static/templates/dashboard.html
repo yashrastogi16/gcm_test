@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block content %}
+Welcome {{name}}
+<br />
+Your Id is {{id}}
+<br />
+You can Edit your Profile here: 
+<a href = "../editprofile/{{id}}" method = "get"><button class="btn btn-primary btn-lg">Edit Profile</button></a>
+<br />
+<br />
+You can Reset your Password Here:
+<a href = "../changepassword/{{id}}"><button class="btn btn-primary btn-lg">Reset Password</button></a>
+<!-- <div class="btn-group" role="group" aria-label="...">
+  <button type="button" class="btn btn-default">Left</button>
+  <button type="button" class="btn btn-default">Middle</button>
+  <button type="button" class="btn btn-default">Right</button>
+</div> -->
+{% endblock %}

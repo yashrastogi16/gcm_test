@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+{% block head %}
+<script>
+function goBack() {
+    window.history.back()
+}
+</script>
+{% endblock %}
+{% block content %}
+<form class="form-horizontal" method="post" >{% csrf_token %}
+{% csrf_token %}
+                <fieldset>
+                <input type="hidden" name="member_id" value = "{{member_id}}">
+                    <div class="input-group input-group-lg">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-user red"></i></span>
+						<input type="text" name = "username" class="form-control" value="{{username}}"/>
+					</div>
+					<div class="clearfix"></div><br>
+					<div class="input-group input-group-lg">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-user red"></i></span>
+						<!-- <input type="text" name = "gender" class="form-control" placeholder = "Male or Female"> -->
+						<select class="form-control" name = "gender" value="{{gender}}">
+  						<option value="Male">Male</option>
+  						<option value="Female">Female</option>
+  						</select>
+					</div>
+					<div class="clearfix"></div><br>
+					<div class="input-group input-group-lg">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-cog red"></i></span>
+						<input type="text" name = "user_id" class="form-control" value='{{user_id}}' disabled="true">
+					</div>
+					<div class="clearfix"></div><br>
+					<div class="clearfix"></div><br>
+					<div class="input-group input-group-lg">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-globe red"></i></span>
+						<input type="email" name = "email_id" class="form-control" value = "{{email_id}}" disabled='True'>
+					</div>
+					<div class="clearfix"></div><br>
+					<div class="input-group input-group-lg">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-map-marker red"></i></span>
+						<input type="text" name = "resident_location" class="form-control" value = "{{resident_location}}">
+					</div>
+					<div class="clearfix"></div><br>
+					<div class="input-group input-group-lg">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-phone-alt red"></i></span>
+						<input type="text" name = "contact_no" class="form-control" value = "{{contact_no}}">
+					</div>
+					<div class="clearfix"></div><br>
+					<button class="btn btn-primary btn-lg">Save</button>
+					</fieldset>
+</form>
+<button class="btn btn-primary btn-lg" onclick="goBack()" style="
+    margin-left: 90px;
+    margin-top: -72px;
+">Cancel</button>
+{% endblock %}
